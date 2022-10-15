@@ -44,7 +44,7 @@ User.propTypes = {
     tag: PropTypes.string.isRequired,
     location: PropTypes.string,
     avatar: PropTypes.string,
-    stats: PropTypes.node.isRequired
+    stats: PropTypes.number.isRequired
 };
 
-export default User; 
+export default User;

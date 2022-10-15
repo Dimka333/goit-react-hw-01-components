@@ -11,7 +11,7 @@ const FriendList = ({ friends,}) => (
        <p className={styles.friendList__name}>{name}</p>
 </li>)
  )}
-</ul>   
+</ul>
     </div>
 );
 
@@ -19,10 +19,10 @@ FriendList.defaultProps = {
     avatar: 'Аватар Пользователя'
 }
 
-FriendList.prototype = {
+FriendList.propTypes= {
     id: PropTypes.number.isRequired,
     name: PropTypes.string.isRequired,
-    avatar: PropTypes.string,
+    avatar: PropTypes.string.isRequired,
     isOnline: PropTypes.bool.isRequired
 
 }

@@ -16,13 +16,13 @@ function groupStats(statisticalData) {
 };
 
 const Statistics = ({ title, stats}) => (
-  
+
   <section className={styles.statistics}>
     {title ?<h2 className={styles.statistics__title}>{title}</h2> : null}
 
     <ul className={styles.statistics__list}>
       {groupStats(stats).map((el) =>
-      
+
         (<li className={styles.statistics__item} style={{backgroundColor: getRandomColor()}} key={el.id}>
           <span className={styles.statistics__label}>{el.label}</span>
           <span className={styles.statistics__precentage}>{el.percentage}%</span>
@@ -36,10 +36,11 @@ const Statistics = ({ title, stats}) => (
 // }
 
 Statistics.propTypes = {
+  id: PropTypes.string.isRequired,
   title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
-      labe: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
       percentage: PropTypes.number.isRequired,
     })
   ).isRequired,
@@ -48,7 +49,7 @@ Statistics.propTypes = {
 function getRandomColor() {
   const letters = '0123456789ABCDEF';
   let randomBgColor = '#';
-  for (var i = 0; i < 6; i++) {
+  for (let i = 0; i < 6; i++) {
     randomBgColor += letters[Math.floor(Math.random() * 16)];
   }
   return randomBgColor;
