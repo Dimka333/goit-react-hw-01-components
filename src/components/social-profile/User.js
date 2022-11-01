@@ -36,7 +36,6 @@ const User = ({ name, tag, location, avatar, stats }) => (
 User.defaultProps = {
     avatar: 'Аватар Пользователя',
     location: 'Страна, город проживания'
-
 }
 
 User.propTypes = {
@@ -44,7 +43,13 @@ User.propTypes = {
     tag: PropTypes.string.isRequired,
     location: PropTypes.string,
     avatar: PropTypes.string,
-    stats: PropTypes.number.isRequired
+    stats: PropTypes.arrayOf(
+      PropTypes.shape({
+        followers: PropTypes.number.isRequired,
+        views: PropTypes.number.isRequired,
+        likes: PropTypes.number.isRequired,
+      })
+    ).isRequired
 };
 
 export default User;
